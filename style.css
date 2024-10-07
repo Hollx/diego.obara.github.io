@@ -4,50 +4,79 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-  }
-  
-  /* Cabeçalho */
-  header {
-    background-color: #333;
-    color: #fff;
+    background-color: #f9f9f9; /* Fundo claro */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #333; /* Cor de fundo escura */
+    color: #fff; /* Texto branco */
     padding: 10px 0;
     text-align: center;
-  }
-  
-  header nav ul {
+}
+
+header nav ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  header nav ul li {
-    display: inline;
-    margin: 0 15px;
-  }
-  
-  header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  /* Seções */
-  section {
-    margin: 20px;
-  }
-  
-  h2, h3 {
-    color: #333;
-  }
-  
-  /* Rodapé */
-  footer {
+}
+
+header nav ul li {
+    display: inline; /* Alinhamento horizontal */
+    margin: 0 15px; /* Espaçamento entre os itens do menu */
+}
+
+header nav ul li a {
+    color: #fff; /* Cor dos links do cabeçalho */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+header h1 {
+    margin: 0; /* Remove margem do título */
+}
+
+/* Seções */
+section {
+    background: #fff; /* Fundo branco para as seções */
+    margin: 20px; /* Margem externa */
+    padding: 20px; /* Padding interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h2, h3 {
+    color: #333; /* Títulos escuros */
+}
+
+/* Links */
+a {
+    color: #3498db; /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+/* Rodapé */
+footer {
     text-align: center;
     padding: 10px;
-    background-color: #333;
-    color: white;
-  }
-  
+    background-color: #333; /* Cor de fundo escura */
+    color: white; /* Texto branco */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Padding reduzido em dispositivos móveis */
+    }
+
+    section {
+        margin: 10px; /* Margem reduzida em dispositivos móveis */
+    }
+
+    header nav ul li {
+        display: block; /* Alinhamento vertical em dispositivos móveis */
+        margin: 5px 0; /* Espaçamento vertical */
+    }
+}
