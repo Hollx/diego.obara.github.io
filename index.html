@@ -1,59 +1,96 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio - Diego Obara</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Diego Obara</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Adiciona o Chart.js -->
 </head>
 <body>
-  <header>
-    <h1>Portfólio de Dados - Diego Obara</h1>
-    <nav>
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <h1>Portfólio</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section id="sobre">
-    <h2>Sobre Mim</h2>
-    <p>
-      Sou um profissional apaixonado por análise de dados e ciência de dados, com experiência em Python, SQL, e ferramentas de visualização como Tableau e Power BI.
-      Aqui você encontrará uma coleção dos meus projetos mais relevantes, onde aplico técnicas de machine learning, análise de dados e visualizações interativas para resolver problemas do mundo real.
-    </p>
-  </section>
+    <!-- Seção de Projetos -->
+    <section id="projetos">
+        <h2>Meus Projetos</h2>
 
-  <section id="habilidades">
-    <h2>Habilidades</h2>
-    <ul>
-      <li>Python para Análise de Dados</li>
-      <li>Machine Learning (scikit-learn, TensorFlow)</li>
-      <li>SQL para consultas e manipulação de dados</li>
-      <li>Visualização de Dados (Tableau, Power BI, Matplotlib, Seaborn)</li>
-      <li>ETL e Integração de Dados</li>
-    </ul>
-  </section>
+        <div class="projeto">
+            <h3>Projeto de Análise de Dados</h3>
+            <p>Neste projeto, analisei dados de vendas e criei gráficos para visualizar o desempenho ao longo do tempo.</p>
+            <canvas id="graficoVendas" width="400" height="200"></canvas> <!-- Gráfico inserido aqui -->
+        </div>
 
-  <section id="projetos">
-    <h2>Projetos Recentes</h2>
-    <ul>
-      <li><a href="projeto1.html">Análise de Dados Financeiros</a></li>
-      <li><a href="projeto2.html">Modelo de Previsão de Vendas</a></li>
-    </ul>
-  </section>
+        <div class="projeto">
+            <h3>Projeto de Reservas de Mesas</h3>
+            <p>Desenvolvi um aplicativo de reservas de mesas e utilizei gráficos para mostrar a utilização do espaço ao longo das semanas.</p>
+            <canvas id="graficoReservas" width="400" height="200"></canvas> <!-- Outro gráfico -->
+        </div>
+    </section>
 
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Email: <a href="mailto:diego.h.obara@gmail.com">diego.h.obara@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/diego-obara-8988181a6/" target="_blank">linkedin.com/diego-obara</a></p>
-    <p>GitHub: <a href="https://github.com/Hollx" target="_blank">github.com/Hollx</a></p>
-  </section>
+    <!-- Contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Email: <a href="mailto:diego.h.obara@gmail.com">diego.h.obara@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/diego-obara-8988181a6/" target="_blank">linkedin.com/diego-obara</a></p>
+        <p>GitHub: <a href="https://github.com/Hollx" target="_blank">github.com/Hollx</a></p>
+    </section>
 
-  <footer>
-    <p>&copy; 2024 Diego Obara. Todos os direitos reservados.</p>
-  </footer>
+    <!-- Scripts para os gráficos -->
+    <script>
+        // Gráfico de Vendas
+        var ctxVendas = document.getElementById('graficoVendas').getContext('2d');
+        var graficoVendas = new Chart(ctxVendas, {
+            type: 'line',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+                datasets: [{
+                    label: 'Vendas',
+                    data: [120, 150, 180, 220, 200, 240],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Reservas
+        var ctxReservas = document.getElementById('graficoReservas').getContext('2d');
+        var graficoReservas = new Chart(ctxReservas, {
+            type: 'bar',
+            data: {
+                labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'],
+                datasets: [{
+                    label: 'Reservas',
+                    data: [50, 60, 80, 100],
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
