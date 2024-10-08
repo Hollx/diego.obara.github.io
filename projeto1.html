@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Análise de Dados Financeiros</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Biblioteca Chart.js -->
 </head>
 <body>
   <header>
@@ -35,6 +36,44 @@
     <p>
       A análise revelou padrões de despesas sazonais, além de prever um aumento de 10% nas vendas para o próximo trimestre. Um modelo de regressão linear foi usado para as previsões.
     </p>
+
+    <h3>Visualização dos Dados</h3>
+    <p>Veja abaixo um gráfico interativo das receitas e despesas mensais:</p>
+    <canvas id="graficoFinanceiro" width="400" height="200"></canvas> <!-- Canvas para o gráfico -->
+
+    <!-- Script para gerar o gráfico interativo -->
+    <script>
+      var ctx = document.getElementById('graficoFinanceiro').getContext('2d');
+      var graficoFinanceiro = new Chart(ctx, {
+          type: 'line', // Tipo de gráfico
+          data: {
+              labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'], // Meses
+              datasets: [{
+                  label: 'Receita',
+                  data: [12000, 15000, 18000, 16000, 20000, 22000, 24000], // Dados de receitas
+                  borderColor: 'rgba(75, 192, 192, 1)',
+                  backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                  fill: true,
+                  tension: 0.1
+              },
+              {
+                  label: 'Despesas',
+                  data: [10000, 13000, 14000, 12000, 17000, 19000, 21000], // Dados de despesas
+                  borderColor: 'rgba(255, 99, 132, 1)',
+                  backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                  fill: true,
+                  tension: 0.1
+              }]
+          },
+          options: {
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  }
+              }
+          }
+      });
+    </script>
 
     <h3>Links</h3>
     <p><a href="https://github.com/seuusuario/projeto1" target="_blank">Código no GitHub</a></p>
